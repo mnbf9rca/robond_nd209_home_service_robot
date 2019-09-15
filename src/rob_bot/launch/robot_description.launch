@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!-- send urdf to param server -->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find rob_bot)/urdf/rob_bot.xacro'" />
+
+    <!-- Send fake joint values-->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+        <param name="use_gui" value="false"/>
+    </node>
+
+    <!-- Send robot states to tf -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"/>
+
+    <!-- rotate depth camera -->
+    <!-- <node pkg="tf" type="static_transform_publisher" name="ime_slam_camera_tf" args="0 0 0 -1.58 0 -1.58 /camera/depth/image_raw /camera/depth/image_rotated 100"/>-->
+
+</launch>
