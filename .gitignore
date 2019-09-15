@@ -243,3 +243,4 @@ CATKIN_IGNORE
 urdf-viz
 *.db
 *.ply
+.bashrc

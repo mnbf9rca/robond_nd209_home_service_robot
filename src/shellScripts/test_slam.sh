@@ -1,3 +1,13 @@
 #!/bin/sh
-xterm -e "roslaunch rob_bot world.launch world_file:=~/catkin_ws/src/rob_bot/worlds/kitchen_dining.world 2>/dev/null &"
+echo "launching world"
+
+xterm -e " roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=$HOME/catkin_ws/src/world/u.world "&
 sleep 5
+echo "launching turtlebot"
+xterm -e " roslaunch turtlebot_gazebo gmapping_demo.launch" &
+sleep 5
+echo "launching rviz"
+xterm -e " roslaunch turtlebot_rviz_launchers view_navigation.launch " &
+sleep 5
+echo "launching teleop"
+xterm -e " roslaunch turtlebot_teleop keyboard_teleop.launch "
