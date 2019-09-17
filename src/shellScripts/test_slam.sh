@@ -1,7 +1,7 @@
 #!/bin/sh
 echo "launching world"
 
-xterm -e " roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=$HOME/catkin_ws/src/world/u.world "&
+xterm -e " roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=$HOME/catkin_ws/src/world/u-2.world "&
 sleep 5
 echo "launching turtlebot"
 xterm -e " roslaunch turtlebot_gazebo gmapping_demo.launch" &
