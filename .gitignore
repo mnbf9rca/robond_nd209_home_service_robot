@@ -244,4 +244,4 @@ urdf-viz
 *.db
 *.ply
 .bashrc
-src/wall_follower/CMakeLists.txt
+src/CMakeLists.txt
